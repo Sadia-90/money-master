@@ -8,12 +8,67 @@
     <!-- css link -->
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>javascript final</title>
 </head>
 
 <body>
+    <header>
+        <h1 class="text-5xl p-4 text-center font-semibold text-purple-600 bg-sky-100">Money Management</h1>
+    </header>
+    <main class="grid grid-cols-2 gap-4 text-purple-600">
+        <section>
+            <div>
+                <img src="./images (5).jfif" alt="">
+            </div>
+        </section>
 
+        <section>
+            <div>
+                <h1>Total Information</h1>
+                <form>
+                    <label for="salary-box">income: </label>
+                    <input id="salary-box" placeholder="enter salary" type="text">
 
+                </form>
+                <h1>Expenses</h1>
+                <form>
+                    <label for="Food-box">food: </label>
+                    <input id="Food-box" placeholder="enter food expenses" type="text">
+
+                </form>
+                <form>
+                    <label for="Rent-box">Rent: </label>
+                    <input id="Rent-box" placeholder="enter rent expenses" type="text">
+
+                </form>
+                <form>
+                    <label for="cloth-box">Clothes: </label>
+                    <input id="cloth-box" placeholder="enter cloth expenses" type="text">
+
+                </form>
+                <button id="calculate-btn">calculate</button>
+                <br>
+                <label for="cloth-box">Total Expenses: </label>
+                <input id="cloth-box" type="text">
+                <br>
+
+                <form>
+                    <label for="percentage">Save: </label>
+                    <div class=" flex">
+                        <input id="percentage" type="text">
+                        <h1>%</h1>
+                        <input id="save" type="text">
+                    </div>
+                </form>
+
+                <label for="cloth-box">Saving Amount : </label>
+                <input id="cloth-box" type="text">
+                <br>
+                <label for="cloth-box">Remaining Balance : </label>
+                <input id="cloth-box" type="text">
+            </div>
+        </section>
+    </main>
 
     <script src="./money.js"></script>
 </body>
