@@ -2,6 +2,8 @@ const salaryBox = document.getElementById("salary-box");
 const foodBox = document.getElementById("Food-box");
 const rentBox = document.getElementById("Rent-box");
 const clothBox = document.getElementById("cloth-box");
+const calculateBtn = document.getElementById("calculate-btn");
+
 const expenseBox = document.getElementById("expenses-box");
 const savings = document.getElementById("percentage");
 
@@ -9,16 +11,37 @@ const savingAmount = document.getElementById("Saving-box");
 const remainingBalance = document.getElementById("Remaining-box");
 
 
+document.getElementById("calculate-btn").addEventListener('click', function () {
+    const salaryBox = document.getElementById("salary-box");
+    // console.log(salaryBox);
+    const totalIncome = salaryBox.value;
+    // console.log(totalIncome);
+    const incomeAmount = parseFloat(totalIncome);
+
+    // total expenses
+    const expenseBox = document.getElementById("expenses-box");
+    const totalExpense = expenseBox.value;
+    const previousExpenseBox = parseFloat(expenseBox);
 
 
+    expenseBox.value = previousExpenseBox + incomeAmount;
+    console.log(value);
 
+    //   update balance
 
+    //     const foodBox = document.getElementById("Food-box");
+    //     const Food = foodBox.value;
+    //     const foodExpense = parseFloat(Food);
 
+    //     const rentBox = document.getElementById("Rent-box");
+    //     const rent = rentBox.value;
+    //     const rentExpense = parseFloat(rent);
 
+    //     const clothBox = document.getElementById("cloth-box");
+    //     const cloth = foodBox.value;
+    //     const clothExpense = parseFloat(cloth);
 
-const income = document.getElementById("salary-box").addEventListener('click', function () {
-
-
-
-
+    //     const totalExpenseAmount = foodExpense + rentExpense + clothExpense;
+    //   const 
+    salaryBox.value = '';
 })

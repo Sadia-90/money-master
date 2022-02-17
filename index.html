@@ -13,18 +13,20 @@
 </head>
 
 <body>
+    <!-- header start -->
     <header>
         <h1 class="text-5xl p-4 text-center font-semibold text-purple-600 bg-sky-100">Money Management</h1>
     </header>
+    <!-- header end -->
     <main>
-
-        <div class="md:flex md:flex-cols-2 md:justify-center gap-4 text-purple-600 text-center">
+        <!-- img section  -->
+        <div class="sm:grid grid-cols-2  gap-2">
             <section>
                 <div>
                     <img src=" ./images (5).jfif" alt="">
                 </div>
             </section>
-
+            <!-- info section -->
             <section>
                 <div>
                     <h1>Total Information</h1>
@@ -34,7 +36,7 @@
 
                     </form>
                     <br>
-                    <h1>Expenses</h1>
+                    <h1 id="expenseable">Expenses</h1>
                     <form>
                         <label for="Food-box">food: </label>
                         <input id="Food-box" placeholder="enter food expenses" type="text">
@@ -56,7 +58,7 @@
                     <button class="bg-sky-300 h-10 w-20 mb-5" id="calculate-btn">calculate</button>
                     <br>
                     <label for="expenses-box">Total Expenses: </label>
-                    <input id="expenses-box" type="text">
+                    <input id="expenses-box" placeholder="enter net value" type="text">
                     <br>
 
                     <form>
@@ -83,7 +85,7 @@
 
         </div>
     </main>
-
+    <!-- js script -->
     <script src="./money.js"></script>
 </body>
 
