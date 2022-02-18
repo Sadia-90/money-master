@@ -1,63 +1,61 @@
+//  total input
 const salaryBox = document.getElementById("salary-box");
 const foodBox = document.getElementById("Food-box");
 const rentBox = document.getElementById("Rent-box");
 const clothBox = document.getElementById("cloth-box");
-const calculateBtn = document.getElementById("calculate-btn");
-
-const expenseBox = document.getElementById("expenses-box");
 const savings = document.getElementById("percentage");
 
-const savingAmount = document.getElementById("Saving-box");
-const remainingBalance = document.getElementById("Remaining-box");
+
+//    button
+const calculateBtn = document.getElementById("calculate-btn");
+const saveButton = document.getElementById("save-btn");
+
+//    tag h1
+const totalExpenses = document.getElementById("total-expenses");
+const balance = document.getElementById("total-balance");
+const savingAmount = document.getElementById("saving-amount");
+const remainingBalance = document.getElementById("remaining-balance");
 
 
+function minus(num1, num2) {
+    let Result = num1 - num2;
+    return Result;
+}
 
-document.getElementById("calculate-btn").addEventListener('click', function () {
-    const salaryBox = document.getElementById("salary-box");
-    // console.log(salaryBox);
-    const totalIncome = salaryBox.value;
-    // console.log(totalIncome);
-    const incomeAmount = parseFloat(totalIncome);
+document.getElementById("calculate-btn").addEventListener('click', function (event) {
+    event.preventDefault()
 
-    // total expenses
-    const expenseBox = document.getElementById("expenses-box");
-    const totalExpense = expenseBox.value;
-    // console.log(expenseBox);
-    const previousExpenseBox = parseFloat(totalExpense);
+    let foodBox = document.getElementById("Food-box");
+    let rentBox = document.getElementById("Rent-box");
+    let clothBox = document.getElementById("cloth-box");
+    const totalExpensesAmount = parseFloat(foodBox.value) + parseFloat(rentBox.value) + parseFloat(clothBox.value);
+    console.log(totalExpensesAmount);
 
-    const foodBox = document.getElementById("Food-box");
-    const Food = foodBox.value;
-    const foodExpense = parseFloat(Food);
+    totalExpenses.innerText = totalExpensesAmount;
+    foodBox.value = '';
+    rentBox.value = '';
+    clothBox.value = '';
 
-    const rentBox = document.getElementById("Rent-box");
-    const rent = rentBox.value;
-    const rentExpense = parseFloat(rent);
+    let salaryBox = parseFloat(document.getElementById("salary-box").value);
 
-    const clothBox = document.getElementById("cloth-box");
-    const cloth = foodBox.value;
-    const clothExpense = parseFloat(cloth);
 
-    let totalExpenseAmount = foodExpense + rentExpense + clothExpense;
+    balance.innerText = minus(salaryBox, totalExpensesAmount);
 
-    // expenseBox.value = previousExpenseBox + incomeAmount;
-    // console.log(value);
-
-    let previousExpenseBox = incomeAmount - totalExpenseAmount;
-    //   update balance
-
-    //     const foodBox = document.getElementById("Food-box");
-    //     const Food = foodBox.value;
-    //     const foodExpense = parseFloat(Food);
-
-    //     const rentBox = document.getElementById("Rent-box");
-    //     const rent = rentBox.value;
-    //     const rentExpense = parseFloat(rent);
-
-    //     const clothBox = document.getElementById("cloth-box");
-    //     const cloth = foodBox.value;
-    //     const clothExpense = parseFloat(cloth);
-
-    //     const totalExpenseAmount = foodExpense + rentExpense + clothExpense;
-
-    salaryBox.value = '';
+    if (isNaN(totalExpensesAmount) || totalExpensesAmount < 0) {
+        return alert('please input valid amount of money in number formet')
+    }
 })
+
+saveButton.addEventListener('click', function (event) {
+    event.preventDefault()
+    const incomeTk = parseFloat(document.getElementById("salary-box").value);
+
+    let saveTk = (incomeTk * savings.value) / 100;
+    savingAmount.innerText = saveTk;
+
+    let balanceTk = parseFloat(document.getElementById("total-balance").innerText);
+
+    remainingBalance.innerText = minus(balanceTk, saveTk);
+})
+
+
